@@ -95,8 +95,9 @@ public class MyWorld extends World {
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        addObject(hero, 300, 200);
+        addObject(hero, 452, 2893);
         addObject(new Enemy(), 1170, 410);
+        addObject(new coinGold(), 4910, 2719 );
         
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.

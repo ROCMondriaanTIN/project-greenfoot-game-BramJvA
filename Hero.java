@@ -23,6 +23,7 @@ public class Hero extends Mover {
     public void act() {
         handleInput();
         Pos();
+        Remove();
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -35,6 +36,13 @@ public class Hero extends Mover {
                 getWorld().removeObject(this);
                 break;
             }
+        }
+    }
+    public void Remove()
+    {
+        if(isTouching(coinGold.class))
+        {
+            removeTouching(coinGold.class);
         }
     }
     
