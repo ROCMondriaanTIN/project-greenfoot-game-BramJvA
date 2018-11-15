@@ -14,7 +14,7 @@ public class Hero extends Mover {
     public Hero() {
         super();
         gravity = 9.8;
-        acc = 0.6;
+        acc = 1.0;
         drag = 0.8;
         setImage("p1.png");
     }
@@ -22,7 +22,7 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
-        
+        Pos();
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -37,6 +37,13 @@ public class Hero extends Mover {
             }
         }
     }
+    
+    public String Pos()
+    {
+        String mijnPositie = "X" + getX() + "Y" + getY(); 
+        return mijnPositie;
+    }
+        
 
     public void handleInput() {
         if (Greenfoot.isKeyDown("w")) {
