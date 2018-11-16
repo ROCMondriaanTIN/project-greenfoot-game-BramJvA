@@ -10,13 +10,15 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
+    public int pCount;
+    public int dCount;
 
     public Hero() {
         super();
         gravity = 9.8;
         acc = 1.0;
         drag = 0.8;
-        setImage("p1.png");
+        setImage("hud_p3Alt.png");
     }
 
     @Override
@@ -26,6 +28,10 @@ public class Hero extends Mover {
         Remove();
         velocityX *= drag;
         velocityY += acc;
+        getWorld().showText("Diamanten = " + Integer.toString(dCount),917, 30);
+        getWorld().showText("Coins = " + Integer.toString(pCount), 940, 50);
+        getWorld().showText(" X = " + Integer.toString(getX()), 950, 75);
+        getWorld().showText(" Y = " + Integer.toString(getY()), 950, 100);
         if (velocityY > gravity) {
             velocityY = gravity;
         }
@@ -40,9 +46,21 @@ public class Hero extends Mover {
     }
     public void Remove()
     {
+        
         if(isTouching(coinGold.class))
         {
             removeTouching(coinGold.class);
+            pCount += 2;
+        }
+        if(isTouching(coinSilver.class))
+        {
+            removeTouching(coinSilver.class);
+            pCount ++;
+        }
+        if(isTouching(gemGreen.class))
+        {
+            removeTouching(gemGreen.class);
+            dCount ++;
         }
     }
     
@@ -55,13 +73,13 @@ public class Hero extends Mover {
 
     public void handleInput() {
         if (Greenfoot.isKeyDown("w")) {
-            velocityY = -10;
+            velocityY = -12;
         }
 
         if (Greenfoot.isKeyDown("a")) {
-            velocityX = -2;
+            velocityX = -5;
         } else if (Greenfoot.isKeyDown("d")) {
-            velocityX = 2;
+            velocityX = 5;
         }
     }
 

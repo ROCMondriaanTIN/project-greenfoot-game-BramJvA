@@ -77,10 +77,10 @@ public class TileFactory {
                 tile = new Tile("plant.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 79:
-                tile = new Tile("coinSilver.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new coinSilver("coinSilver.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 78:
-                tile = new Tile("coinGold.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new coinGold("coinGold.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 8:
                 tile = new Tile("snailWalk2.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -98,13 +98,13 @@ public class TileFactory {
                 tile = new Tile("hud_gem_blue.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 126:
-                tile = new Tile("gemGreen.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new gemGreen("gemGreen.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 227:
                 tile = new Tile("rock.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 187:
-                tile = new Tile("keyGreen.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new keyGreen("keyGreen.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 102:
                 tile = new Tile("door_openMid.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
