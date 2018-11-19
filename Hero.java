@@ -12,6 +12,7 @@ public class Hero extends Mover {
     private final double drag;
     public int pCount;
     public int dCount;
+    public int kCount;
 
     public Hero() {
         super();
@@ -28,10 +29,11 @@ public class Hero extends Mover {
         Remove();
         velocityX *= drag;
         velocityY += acc;
-        getWorld().showText("Diamanten = " + Integer.toString(dCount),917, 30);
+        getWorld().showText("Key = "  + Integer.toString(kCount),948, 71);
+        getWorld().showText("Diamanten = "  + Integer.toString(dCount),917, 30);
         getWorld().showText("Coins = " + Integer.toString(pCount), 940, 50);
-        getWorld().showText(" X = " + Integer.toString(getX()), 950, 75);
-        getWorld().showText(" Y = " + Integer.toString(getY()), 950, 100);
+        getWorld().showText(" X = " + Integer.toString(getX()), 950, 113);
+        getWorld().showText(" Y = " + Integer.toString(getY()), 950, 93);
         if (velocityY > gravity) {
             velocityY = gravity;
         }
@@ -61,6 +63,11 @@ public class Hero extends Mover {
         {
             removeTouching(gemGreen.class);
             dCount ++;
+        }
+        if(isTouching(keyGreen.class))
+        {
+            removeTouching(keyGreen.class);
+            kCount ++;
         }
     }
     
