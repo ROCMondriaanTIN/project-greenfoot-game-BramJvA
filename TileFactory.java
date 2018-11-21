@@ -88,7 +88,7 @@ public class TileFactory {
                 break;
             case 47:
                 tile = new Tile("buttonGreen_pressed.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-                tile.getImage().mirrorVertically();
+               tile.getImage().mirrorVertically();
                 tile.isSolid = true;
                 break;
             case 43:
