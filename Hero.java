@@ -8,11 +8,12 @@ import greenfoot.*;
 public class Hero extends Mover {
 
     private final double gravity;
-    private final double acc;
+    private double acc;
     private final double drag;
     public int pCount;
     public int dCount;
     public int kCount;
+    public boolean isTouchingMovingPlatform = false;
 
     public Hero() {
         super();
@@ -27,8 +28,16 @@ public class Hero extends Mover {
         handleInput();
         Pos();
         Remove();
-        velocityX *= drag;
-        velocityY += acc;
+        isTouchingMovingPlatform = false;
+        for (Platform1 platform : getIntersectingObjects(Platform1.class)) {
+            if (platform != null) {
+                isTouchingMovingPlatform = true;
+            }
+        }
+        if(isTouchingMovingPlatform == false) {
+            velocityX *= drag;
+            velocityY += acc;
+        }
         getWorld().showText("Key = "  + Integer.toString(kCount),948, 71);
         getWorld().showText("Diamanten = "  + Integer.toString(dCount),917, 30);
         getWorld().showText("Coins = " + Integer.toString(pCount), 940, 50);
@@ -45,6 +54,8 @@ public class Hero extends Mover {
                 break;
             }
         }
+        
+
     }
     public void Remove()
     {

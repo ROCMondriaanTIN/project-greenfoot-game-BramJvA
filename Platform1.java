@@ -22,32 +22,45 @@ public class Platform1 extends Mover
     public void act() 
     {
         PLbewegen();
-        applyVelocity();
-        if(Greenfoot.isKeyDown("up"))
-        {
-         PLbewegen();   
+        for(Mover mover: getIntersectingObjects(Mover.class)) {
+            if(mover != null){
+                mover.velocityX = velocityX;
+                mover.velocityY = velocityY;
+            }
         }
-       
+        applyVelocity();
     }    
     
     public void PLbewegen()
     {
-        if(Teller == 1)
+        if(Teller == 0)
         {
             //setLocation(getX()-2,getY()+4);
-            velocityX = -1;
-            velocityY = -1;
+            velocityX = 2;
+            velocityY = -2;
         }
-
-        if(Teller == 40)
+        //naar boven
+        if(Teller == 188) {
+            velocityX = 0;
+            velocityY = 0;
+        }
+        //wacht
+        if(Teller == 250)
         {
             //setLocation(getX()+2,getY()-4 );
-            velocityX = 1;
-            velocityY = 1;
+            velocityX = -2;
+            velocityY = 2;
         }
-        if(Teller >= 79)
+        // naar beneden
+        if(Teller == 438)
         {
+            velocityX = 0;
+            velocityY = 0;   
+        }
+        //wacht
+        if(Teller >= 500) {
             Teller = 0;
+            return;
         }
         Teller ++;
     }
