@@ -13,10 +13,12 @@ public class Platform extends Mover
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int Teller;
+    static int Nummer;
+    private int Nummer2;
     public Platform()
     {
         getImage().mirrorVertically();
-        
+       
     }
     
     public void act() 
@@ -68,7 +70,6 @@ public class Platform extends Mover
         Teller ++;
        
     }
-   
     
     
 }
