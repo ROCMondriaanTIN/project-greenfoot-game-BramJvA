@@ -107,14 +107,17 @@ public class TileFactory {
             case 187:
                 tile = new keyGreen("keyGreen.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
-            case 102:
+            case 103:
                 tile = new DoorOpenMid ("door_openMid.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
-            case 103:
+            case 104:
                 tile = new Tile("door_openTop.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 101:
                 tile = new Tile("door_closedMid.png" ,TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                break;
+            case 102:
+                tile = new DoorOpenTop("door_closedTop.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 202:
                 tile = new Tile("mushroomRed.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
