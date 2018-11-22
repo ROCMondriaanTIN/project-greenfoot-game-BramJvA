@@ -12,7 +12,7 @@ public class Hero extends Mover {
     private final double drag;
     public int pCount;
     public int dCount;
-    public int kCount;
+    public static int kCount;
     public boolean isTouchingMovingPlatform = false;
 
     public Hero() {

@@ -108,10 +108,13 @@ public class TileFactory {
                 tile = new keyGreen("keyGreen.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 102:
-                tile = new Tile("door_openMid.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new DoorOpenMid ("door_openMid.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 103:
                 tile = new Tile("door_openTop.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                break;
+            case 101:
+                tile = new Tile("door_closedMid.png" ,TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 202:
                 tile = new Tile("mushroomRed.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

@@ -14,13 +14,28 @@ public class DoorOpenMid extends Tile
      */
     public DoorOpenMid(String image, int width, int heigth) {
         super(image, width, heigth);
-    }
+    }   
     public void act() 
     {
-        if(kCount == 0)
+        if (Hero.kCount == 0)
         {
            setImage("door_closedMid.png"); 
         }
-            
+        if(Hero.kCount == 1)
+        {
+            setImage("door_openMid.png");
+        
+        for(Actor hero: getIntersectingObjects(Hero.class))
+        {
+            if(hero != null && getWorld() instanceof MyWorld)
+            {
+                MyWorld MyWorld = new MyWorld();
+                Greenfoot.setWorld(MyWorld);
+                break;
+            }
+        }
+        }
+        
+        
     }    
 }

@@ -20,6 +20,7 @@ public class keyGreen extends Tile
         if(isTouching(Hero.class))
         {
             getWorld().removeObject(this);
+            //Hero.kCount++;
         }
         
     }    
