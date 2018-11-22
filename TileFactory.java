@@ -122,6 +122,9 @@ public class TileFactory {
             case 202:
                 tile = new Tile("mushroomRed.png" , TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
+            case 73:
+                tile = new Tile("chain.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                break;
             default:
                 tile = new Tile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = true;
