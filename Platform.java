@@ -6,14 +6,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Platform1 extends Mover
+public class Platform extends Mover
 {
     /**
      * Act - do whatever the platform wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int Teller;
-    public Platform1()
+    public Platform()
     {
         getImage().mirrorVertically();
         
@@ -40,9 +40,11 @@ public class Platform1 extends Mover
             velocityY = -2;
         }
         //naar boven
-        if(Teller == 188) {
+        
+         if(Teller == 176)
+        {
             velocityX = 0;
-            velocityY = 0;
+            velocityY = 0;   
         }
         //wacht
         if(Teller == 250)
@@ -52,7 +54,8 @@ public class Platform1 extends Mover
             velocityY = 2;
         }
         // naar beneden
-        if(Teller == 438)
+       
+        if(Teller == 426)
         {
             velocityX = 0;
             velocityY = 0;   
@@ -63,7 +66,9 @@ public class Platform1 extends Mover
             return;
         }
         Teller ++;
+       
     }
+   
     
     
 }

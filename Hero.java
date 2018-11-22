@@ -29,7 +29,7 @@ public class Hero extends Mover {
         Pos();
         Remove();
         isTouchingMovingPlatform = false;
-        for (Platform1 platform : getIntersectingObjects(Platform1.class)) {
+        for (Platform platform : getIntersectingObjects(Platform.class)) {
             if (platform != null) {
                 isTouchingMovingPlatform = true;
             }
@@ -54,7 +54,10 @@ public class Hero extends Mover {
                 break;
             }
         }
-        
+        if(isTouching(Water.class))
+        {
+            setLocation(452, 2893);
+        }
 
     }
     public void Remove()
@@ -80,6 +83,7 @@ public class Hero extends Mover {
             removeTouching(keyGreen.class);
             kCount ++;
         }
+        
     }
     
     public String Pos()
