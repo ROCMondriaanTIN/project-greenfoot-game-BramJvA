@@ -17,10 +17,10 @@ public class DoorOpenMid extends Tile
     }   
     public void act() 
     {
-        if (Hero.kCount == 0)
+       /* if (Hero.kCount == 0)
         {
            setImage("door_closedMid.png"); 
-        }
+        }*/
         if(Hero.kCount == 1)
         {
             setImage("door_openMid.png");
@@ -29,14 +29,15 @@ public class DoorOpenMid extends Tile
         {
             if(hero != null && getWorld() instanceof MyWorld && (Greenfoot.isKeyDown("s")))
             {
-                MyWorld MyWorld = new MyWorld();
-                Greenfoot.setWorld(MyWorld);
+                Map2 Map = new Map2();
+                Greenfoot.setWorld(Map);
                 break;
+                
             }
             if(hero != null && getWorld() instanceof Map2 && (Greenfoot.isKeyDown("s")))
             {
-                Map2 Map = new Map2();
-                Greenfoot.setWorld(Map);
+                MyWorld MyWorld = new MyWorld();
+                Greenfoot.setWorld(MyWorld);
                 break;
             }
         }
@@ -45,4 +46,5 @@ public class DoorOpenMid extends Tile
         
         
     }    
+
 }

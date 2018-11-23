@@ -17,19 +17,26 @@ public class DoorOpenTop extends Tile
     }   
     public void act() 
     {
-        if (Hero.kCount == 0)
+        /*if (Hero.kCount == 0)
         {
            setImage("door_closedTop.png"); 
-        }
+        }*/
         if(Hero.kCount == 1)
         {
             setImage("door_openTop.png");
         
         for(Actor hero: getIntersectingObjects(Hero.class))
         {
-            if(hero != null && getWorld() instanceof MyWorld)
+            if(hero != null && getWorld() instanceof MyWorld && (Greenfoot.isKeyDown("s")))
             {
-                MyWorld MyWorld = new MyWorld();
+                Map2 Map = new Map2();
+                Greenfoot.setWorld(Map);
+                break;
+               
+            }
+            if(hero != null && getWorld() instanceof Map2 && (Greenfoot.isKeyDown("s")))
+            {
+                 MyWorld MyWorld = new MyWorld();
                 Greenfoot.setWorld(MyWorld);
                 break;
             }
@@ -38,4 +45,5 @@ public class DoorOpenTop extends Tile
         }  
 }
 }
+
 

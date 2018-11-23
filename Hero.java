@@ -81,7 +81,7 @@ public class Hero extends Mover {
         if(isTouching(keyGreen.class))
         {
             removeTouching(keyGreen.class);
-            kCount ++;
+            kCount = 1;
         }
         
     }
