@@ -10,8 +10,8 @@ public class Hero extends Mover {
     private final double gravity;
     private double acc;
     private final double drag;
-    public int pCount;
-    public int dCount;
+    public static int pCount;
+    public static int dCount;
     public static int kCount;
     public boolean isTouchingMovingPlatform = false;
 
@@ -57,6 +57,10 @@ public class Hero extends Mover {
         if(isTouching(Water.class))
         {
             setLocation(452, 2893);
+        }
+         if(isTouching(Lava.class))
+        {
+            setLocation(452, 338);
         }
 
     }

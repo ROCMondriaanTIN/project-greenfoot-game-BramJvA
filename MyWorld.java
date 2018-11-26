@@ -18,6 +18,7 @@ public class MyWorld extends World {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
         Hero.kCount = 0;
+        Hero.pCount = 0;
         this.setBackground("bg.png");
         
 
