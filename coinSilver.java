@@ -18,9 +18,9 @@ public class coinSilver extends Tile
     
     public void act() 
     {
-          /*if(isTouching(Hero.class))
+        if(isTouching(Hero.class))
         {
             getWorld().removeObject(this);
-        }*/
+        }
     }    
 }
