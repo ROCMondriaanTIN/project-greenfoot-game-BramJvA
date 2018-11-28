@@ -275,16 +275,16 @@ public class TileFactory {
   tile = new Tile ("dirtRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 310:
-  tile = new Tile ("door_closedMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new DoorOpenMid("door_closedMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 311:
-  tile = new Tile ("door_closedTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new DoorOpenTop ("door_closedTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 312:
-  tile = new DoorOpenMid ("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new Tile ("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 313:
-  tile = new DoorOpenTop ("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new Tile ("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 314:
   tile = new Tile ("fence.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -577,7 +577,7 @@ public class TileFactory {
   tile = new Tile ("liquidLavaTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 404:
-  tile = new Tile ("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new DangerousTiles ("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 405:
   tile = new Tile ("liquidWater.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -586,7 +586,7 @@ public class TileFactory {
   tile = new Tile ("liquidWaterTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 407:
-  tile = new Tile ("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new DangerousTiles ("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 408:
   tile = new Tile ("lock_blue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

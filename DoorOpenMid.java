@@ -15,36 +15,37 @@ public class DoorOpenMid extends Tile
     public DoorOpenMid(String image, int width, int heigth) {
         super(image, width, heigth);
     }   
+
     public void act() 
     {
-       /* if (Hero.kCount == 0)
+        if (Hero.kCount == 0)
         {
-           setImage("door_closedMid.png"); 
-        }*/
+            setImage("door_closedMid.png"); 
+        }
         if(Hero.kCount == 1)
         {
             setImage("door_openMid.png");
-        
-        for(Actor hero: getIntersectingObjects(Hero.class))
-        {
-            if(hero != null && getWorld() instanceof MyWorld && (Greenfoot.isKeyDown("s")))
-            {
-                Map2 Map = new Map2();
-                Greenfoot.setWorld(Map);
-                break;
-                
-            }
-            if(hero != null && getWorld() instanceof Map2 && (Greenfoot.isKeyDown("s")))
-            {
-                MyWorld MyWorld = new MyWorld();
-                Greenfoot.setWorld(MyWorld);
-                break;
-            }
-        }
-        getImage().scale(60,60);
-        }
-        
-        
-    }    
 
+            for(Actor hero: getIntersectingObjects(Hero.class))
+            {
+                if(hero != null && getWorld() instanceof MyWorld && (Greenfoot.isKeyDown("s")))
+                {
+                    Map2 Map = new Map2();
+                    Greenfoot.setWorld(Map);
+                    break;
+
+                }
+                if(hero != null && getWorld() instanceof Map2 && (Greenfoot.isKeyDown("s")))
+                {
+
+                    MyWorld MyWorld = new MyWorld();
+                    Greenfoot.setWorld(MyWorld);
+                    break;
+
+                }
+            }
+            getImage().scale(60,60);
+        }
+
+    }    
 }

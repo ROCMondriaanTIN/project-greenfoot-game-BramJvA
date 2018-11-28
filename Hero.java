@@ -14,6 +14,9 @@ public class Hero extends Mover {
     public static int dCount;
     public static int kCount;
     public boolean isTouchingMovingPlatform = false;
+    public static int lives = 2;
+    public boolean isHit;
+    private int hitTimer = 0;
 
     public Hero() {
         super();
@@ -26,8 +29,13 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
+        
+
         Pos();
         Remove();
+        Damage();
+        Lives();
+        Hit();
         isTouchingMovingPlatform = false;
         for (Platform platform : getIntersectingObjects(Platform.class)) {
             if (platform != null) {
@@ -38,7 +46,7 @@ public class Hero extends Mover {
             velocityX *= drag;
             velocityY += acc;
         }
-        getWorld().showText("Key = "  + Integer.toString(kCount),948, 71);
+        getWorld().showText("Key = "  + Integer.toString(kCount),948, 71);        
         getWorld().showText("Diamanten = "  + Integer.toString(dCount),917, 30);
         getWorld().showText("Coins = " + Integer.toString(pCount), 940, 50);
         getWorld().showText(" X = " + Integer.toString(getX()), 950, 113);
@@ -51,22 +59,69 @@ public class Hero extends Mover {
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
                 getWorld().removeObject(this);
+                Greenfoot.setWorld(new GameOver());
                 break;
             }
         }
-        if(isTouching(Water.class))
-        {
-            setLocation(452, 2893);
-        }
-         if(isTouching(Lava.class))
-        {
-            setLocation(452, 338);
-        }
 
+        /*if(isTouching(Water.class))
+        {
+        setLocation(452, 2893);
+        }
+        if(isTouching(Lava.class))
+        {
+        setLocation(452, 338);
+        }*/
+
+        /*if(isTouching(DangerousTiles.class)){
+        setLocation(452, 2893);
+        }*/
     }
+
+    public void Hit() {   
+        if(isHit == true) {
+            if(hitTimer == 10) {
+                isHit = false;
+                hitTimer = 0;
+            }
+            hitTimer++;
+        }
+    }
+
+    public void Damage()
+    {
+
+        for (Actor hero : getIntersectingObjects(DangerousTiles.class))
+        {
+            MyWorld world = new MyWorld();
+            if (hero != null) {
+                if(lives >= 1 && isHit == false) {  
+                    if (getWorld().getClass() == MyWorld.class) {
+                        setLocation(468, 2918);
+                    } else if (getWorld().getClass() == Map2.class) {
+                        setLocation(390, 338);
+                    }
+                    //setLocation(468, 2918);
+                    isHit = true;                       
+                    lives = lives - 1;
+                }
+
+            }
+        }
+    }
+
+    public void Lives()
+    {
+        getWorld().showText("Lives = " + lives,848, 71);
+        if(lives < 1) {
+            setImage("invisible.png");
+            Greenfoot.setWorld(new GameOver());          
+        }
+    }
+
     public void Remove()
     {
-        
+
         if(isTouching(coinGold.class))
         {
             removeTouching(coinGold.class);
@@ -87,17 +142,21 @@ public class Hero extends Mover {
             removeTouching(keyGreen.class);
             kCount = 1;
         }
-        
+
     }
-    
+
     public String Pos()
     {
         String mijnPositie = "X" + getX() + "Y" + getY(); 
         return mijnPositie;
     }
-        
 
     public void handleInput() {
+        if(Greenfoot.isKeyDown("k")){
+            MyWorld world = new MyWorld();            
+            Greenfoot.setWorld(world);
+
+        }
         if (Greenfoot.isKeyDown("w")) {
             velocityY = -12;
         }

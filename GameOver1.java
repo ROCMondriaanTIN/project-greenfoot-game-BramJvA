@@ -1,20 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Lava here.
+ * Write a description of class GameOver1 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Lava extends Tile
+public class GameOver1 extends Mover
 {
     /**
-     * Act - do whatever the Lava wants to do. This method is called whenever
+     * Act - do whatever the GameOver1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-      public Lava(String image, int width, int heigth) {
-        super(image, width, heigth);
-    }
     public void act() 
     {
         // Add your action code here.

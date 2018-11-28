@@ -17,10 +17,10 @@ public class DoorOpenTop extends Tile
     }   
     public void act() 
     {
-        /*if (Hero.kCount == 0)
+        if (Hero.kCount == 0)
         {
            setImage("door_closedTop.png"); 
-        }*/
+        }
         if(Hero.kCount == 1)
         {
             setImage("door_openTop.png");
