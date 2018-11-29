@@ -94,16 +94,16 @@ public class Camera extends Actor {
 
             this.setLocation(x, y);
 
-//          left and right sides
+            //          left and right sides
             if (this.followActor.getX() < this.width / 2
-                    || this.followActor.getX() > this.maxX + this.width / 2) {
+            || this.followActor.getX() > this.maxX + this.width / 2) {
 
                 this.followActor.screenX = this.followActor.getX() - this.getX();
             }
 
-//          top and bottom sides
+            //          top and bottom sides
             if (this.followActor.getY() < this.height / 2
-                    || this.followActor.getY() > this.maxY + this.height / 2) {
+            || this.followActor.getY() > this.maxY + this.height / 2) {
                 this.followActor.screenY = this.followActor.getY() - this.getY();
             }
         } else {
