@@ -17,7 +17,8 @@ public class MyWorld extends World {
     public MyWorld() {
         // Create a new world with 6439439x253439 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);        
-        this.setBackground("bg.png");     
+        this.setBackground("bg.png");  
+        
         
 
         int[][] map = {

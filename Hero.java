@@ -63,19 +63,6 @@ public class Hero extends Mover {
                 break;
             }
         }
-
-        /*if(isTouching(Water.class))
-        {
-        setLocation(452, 2893);
-        }
-        if(isTouching(Lava.class))
-        {
-        setLocation(452, 338);
-        }*/
-
-        /*if(isTouching(DangerousTiles.class)){
-        setLocation(452, 2893);
-        }*/
     }
 
     public void Hit() {   
@@ -142,7 +129,11 @@ public class Hero extends Mover {
             removeTouching(keyGreen.class);
             kCount = 1;
         }
-
+        if(pCount >=40)
+        {
+            pCount = 0;
+            lives++;
+        }
     }
 
     public String Pos()
@@ -152,8 +143,13 @@ public class Hero extends Mover {
     }
 
     public void handleInput() {
-        if(Greenfoot.isKeyDown("k")){
+        if(Greenfoot.isKeyDown("p")){
             MyWorld world = new MyWorld();            
+            Greenfoot.setWorld(world);
+
+        }
+        if(Greenfoot.isKeyDown("o")){
+            Map2 world = new Map2();            
             Greenfoot.setWorld(world);
 
         }
