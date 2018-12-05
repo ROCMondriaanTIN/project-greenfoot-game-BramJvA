@@ -98,14 +98,10 @@ public class MyWorld extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 439, 439);
         addObject(hero, 468, 2918);
-        addObject(new Enemy(), 200, 200);
+        addObject(new Enemy(140), 927, 3038);
+        addObject(new Enemy(150), 318, 2918);
         addObject(new Platform(), 2495, 3215);
-        //addObject(new coinGold(), 491439, 2719);
-        //addObject(new coinSilver(), 7439439, 3158);
-        //addObject(new coinSilver(), 215439, 3158);
-        //addObject(new coinSilver(), 3322, 22898);
-        //addObject(new coinSilver(), 3987, 2258);
-        //addObject(new coinSilver(), 276439, 2198);
+        
         
         // Force act zodat de camera op de juist plek staat.
         camera.act();

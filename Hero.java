@@ -56,13 +56,13 @@ public class Hero extends Mover {
         }
         applyVelocity();
 
-        for (Actor enemy : getIntersectingObjects(Enemy.class)) {
+        /*for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
                 getWorld().removeObject(this);
                 Greenfoot.setWorld(new GameOver());
                 break;
             }
-        }
+        }*/
     }
 
     public void Hit() {   
@@ -74,7 +74,11 @@ public class Hero extends Mover {
             hitTimer++;
         }
     }
-
+    public void TerugTP()
+    {
+        setLocation(468, 2918);
+        }
+        
     public void Damage()
     {
 
@@ -90,7 +94,7 @@ public class Hero extends Mover {
                     }
                     //setLocation(468, 2918);
                     isHit = true;                       
-                    lives = lives - 1;
+                    lives --;
                 }
 
             }
@@ -131,7 +135,7 @@ public class Hero extends Mover {
         }
         if(pCount >=40)
         {
-            pCount = 0;
+            pCount -= 40;
             lives++;
         }
     }

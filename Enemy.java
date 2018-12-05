@@ -1,6 +1,6 @@
 
 import greenfoot.*;
-
+import java.util.List;
 /**
  *
  * @author R. Springer
@@ -13,17 +13,18 @@ public class Enemy extends Mover {
     private boolean firstAct;
     private int speed;
 
-    public Enemy() {
+    public Enemy(int walkRange) {
         super();
-        setImage("pokerMad.png");
+        setImage("snailWalk1.png");
         getImage().mirrorHorizontally();
-        walkRange = 140;
+        this.walkRange = walkRange;
         firstAct = true;
         speed = 1;
     }
 
     @Override
     public void act() {
+        EnemyKill();
         int x = getX();
         int y = getY();
 
@@ -45,4 +46,22 @@ public class Enemy extends Mover {
             getImage().mirrorHorizontally();
         }
     }
+    
+    public void EnemyKill()
+    { 
+        if (getOneObjectAtOffset(-19, -45, Hero.class) != null || getOneObjectAtOffset(19, -45, Hero.class) != null) 
+       {  
+           getWorld().removeObject(this);  
+           Hero.pCount += 5;
+           
+       } 
+       else if(getOneObjectAtOffset(-19, 10, Hero.class) != null || getOneObjectAtOffset(19, 10, Hero.class) != null )
+       {  
+           List <Hero> hero = getWorld().getObjects(Hero.class);
+           hero.get(0).TerugTP();
+           Greenfoot.delay(5);
+           Hero.lives --;
+       }
+    }
 }
+
