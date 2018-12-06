@@ -293,7 +293,7 @@ public class TileFactory {
   tile = new Tile ("fenceBroken.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 316:
-  tile = new Tile ("fireball.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new fireBall ("fireball.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 317:
   tile = new Tile ("fishDead.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -350,10 +350,10 @@ public class TileFactory {
   tile = new Tile ("flyFly2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 335:
-  tile = new Tile ("gemBlue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new gemBlue ("gemBlue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 336:
-  tile = new gemGreen ("gemGreen.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new Tile ("gemGreen.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 337:
   tile = new Tile ("gemRed.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -517,7 +517,7 @@ public class TileFactory {
   tile = new Tile ("hud_keyGreem_disabled.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 384:
-  tile = new keyGreen ("hud_keyGreen.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new Tile ("hud_keyGreen.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 385:
   tile = new Tile ("hud_keyRed.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -556,7 +556,7 @@ public class TileFactory {
   tile = new Tile ("keyBlue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 397:
-  tile = new Tile ("keyGreen.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+  tile = new keyGreen ("keyGreen.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
  break;
  case 398:
   tile = new Tile ("keyRed.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

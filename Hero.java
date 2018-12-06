@@ -45,10 +45,9 @@ public class Hero extends Mover {
         if(isTouchingMovingPlatform == false) {
             velocityX *= drag;
             velocityY += acc;
-        }
-        getWorld().showText("Key = "  + Integer.toString(kCount),948, 71);        
-        getWorld().showText("Diamanten = "  + Integer.toString(dCount),917, 30);
-        getWorld().showText("Coins = " + Integer.toString(pCount), 940, 50);
+        }      
+        getWorld().showText(""  + Integer.toString(dCount), 40, 90);
+        getWorld().showText("" + Integer.toString(pCount), 950, 40);
         getWorld().showText(" X = " + Integer.toString(getX()), 950, 113);
         getWorld().showText(" Y = " + Integer.toString(getY()), 950, 93);
         if (velocityY > gravity) {
@@ -103,7 +102,7 @@ public class Hero extends Mover {
 
     public void Lives()
     {
-        getWorld().showText("Lives = " + lives,848, 71);
+        getWorld().showText("" + lives, 40 , 40);
         if(lives < 1) {
             setImage("invisible.png");
             Greenfoot.setWorld(new GameOver());          
@@ -123,9 +122,9 @@ public class Hero extends Mover {
             removeTouching(coinSilver.class);
             pCount ++;
         }
-        if(isTouching(gemGreen.class))
+        if(isTouching(gemBlue.class))
         {
-            removeTouching(gemGreen.class);
+            removeTouching(gemBlue.class);
             dCount ++;
         }
         if(isTouching(keyGreen.class))
@@ -174,5 +173,8 @@ public class Hero extends Mover {
 
     public int getHeight() {
         return getImage().getHeight();
+    }
+    public void setLocation2(int x, int y) {
+        setLocation(x,y);
     }
 }
