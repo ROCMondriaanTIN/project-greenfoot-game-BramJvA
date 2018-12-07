@@ -10,6 +10,9 @@ public class Hero extends Mover {
     private final double gravity;
     private double acc;
     private final double drag;
+    private int spawnX;
+    private int spawnY;
+    private boolean firstAct = true;
     public static int pCount;
     public static int dCount;
     public static int kCount;
@@ -29,7 +32,6 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
-        
 
         Pos();
         Remove();
@@ -37,6 +39,12 @@ public class Hero extends Mover {
         Lives();
         Hit();
         isTouchingMovingPlatform = false;
+        if(firstAct)
+        {
+            firstAct = false;
+            spawnX = getX();
+            spawnY = getY();
+        }
         for (Platform platform : getIntersectingObjects(Platform.class)) {
             if (platform != null) {
                 isTouchingMovingPlatform = true;
@@ -56,11 +64,11 @@ public class Hero extends Mover {
         applyVelocity();
 
         /*for (Actor enemy : getIntersectingObjects(Enemy.class)) {
-            if (enemy != null) {
-                getWorld().removeObject(this);
-                Greenfoot.setWorld(new GameOver());
-                break;
-            }
+        if (enemy != null) {
+        getWorld().removeObject(this);
+        Greenfoot.setWorld(new GameOver());
+        break;
+        }
         }*/
     }
 
@@ -73,11 +81,12 @@ public class Hero extends Mover {
             hitTimer++;
         }
     }
+
     public void TerugTP()
     {
-        setLocation(468, 2918);
-        }
-        
+        setLocation(spawnX,spawnY);
+    }
+
     public void Damage()
     {
 
@@ -173,8 +182,5 @@ public class Hero extends Mover {
 
     public int getHeight() {
         return getImage().getHeight();
-    }
-    public void setLocation2(int x, int y) {
-        setLocation(x,y);
     }
 }

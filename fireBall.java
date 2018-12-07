@@ -19,10 +19,10 @@ public class fireBall extends Tile
     {
         setImage("fireball.png");
         turn(5);
-        if(isTouching(Hero.class) && getWorld() instanceof MyWorld)
+        if(isTouching(Hero.class))
         {
             List <Hero> hero = getWorld().getObjects(Hero.class);
-            hero.get(0).setLocation2(468, 2918);
+            hero.get(0).TerugTP();
             Greenfoot.delay(5);
             Hero.lives --;
             
