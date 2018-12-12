@@ -38,14 +38,22 @@ public class DoorOpenMid extends Tile
                 if(hero != null && getWorld() instanceof Map2 && (Greenfoot.isKeyDown("s")))
                 {
 
-                    MyWorld MyWorld = new MyWorld();
-                    Greenfoot.setWorld(MyWorld);
+                    Menu menu = new Menu();
+                    Greenfoot.setWorld(menu);
                     break;
 
                 }
-            }
-            getImage().scale(60,60);
-        }
+                /*if(hero != null && getWorld() instanceof Map3 && (Greenfoot.isKeyDown("s")))
+                {
 
-    }    
+                    Map4 map4 = new Map4();
+                    Greenfoot.setWorld(Map4);
+                    break;
+                }*/
+                
+            }
+
+        }    
+    }
 }
+

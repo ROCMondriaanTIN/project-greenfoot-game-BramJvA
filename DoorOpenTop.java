@@ -41,7 +41,7 @@ public class DoorOpenTop extends Tile
                 break;
             }
         }
-        getImage().scale(60,60);
+        //getImage().scale(60,60);
         }  
 }
 }

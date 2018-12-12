@@ -59,7 +59,7 @@ public class Enemy extends Mover {
        {  
            List <Hero> hero = getWorld().getObjects(Hero.class);
            hero.get(0).TerugTP();
-           Greenfoot.delay(5);
+           Greenfoot.delay(6);
            Hero.lives --;
        }
     }

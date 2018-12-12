@@ -24,8 +24,6 @@ public class GameOver extends World
     {
     PlayAgain playAgain = new PlayAgain();
     addObject (playAgain, 463, 629);
-    GameOver1 gameOver1 = new GameOver1();
-    addObject (gameOver1, 477, 251);
     Hero.lives = 2;
     Hero.pCount = 0;
     Hero.kCount = 0;

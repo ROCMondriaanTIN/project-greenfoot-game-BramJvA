@@ -16,7 +16,7 @@ public class PlayAgain extends Mover
     {
         if(Greenfoot.mouseClicked(this)||Greenfoot.isKeyDown("space" ))
         {
-            Greenfoot.setWorld (new MyWorld());
+            Greenfoot.setWorld (new Menu());
         }
         
     }    

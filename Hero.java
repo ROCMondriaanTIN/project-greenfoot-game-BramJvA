@@ -20,19 +20,19 @@ public class Hero extends Mover {
     public static int lives = 2;
     public boolean isHit;
     private int hitTimer = 0;
+    public static int s = 1;
 
     public Hero() {
         super();
         gravity = 9.8;
         acc = 1.0;
         drag = 0.8;
-        setImage("hud_p3Alt.png");
+        setImage("hud_p"+s+"Alt.png");
     }
 
     @Override
     public void act() {
         handleInput();
-
         Pos();
         Remove();
         Damage();
@@ -56,8 +56,9 @@ public class Hero extends Mover {
         }      
         getWorld().showText(""  + Integer.toString(dCount), 40, 90);
         getWorld().showText("" + Integer.toString(pCount), 950, 40);
-        getWorld().showText(" X = " + Integer.toString(getX()), 950, 113);
+        /*getWorld().showText(" X = " + Integer.toString(getX()), 950, 113);
         getWorld().showText(" Y = " + Integer.toString(getY()), 950, 93);
+        */
         if (velocityY > gravity) {
             velocityY = gravity;
         }
@@ -70,7 +71,7 @@ public class Hero extends Mover {
         break;
         }
         }*/
-    }
+    }  
 
     public void Hit() {   
         if(isHit == true) {
@@ -80,6 +81,12 @@ public class Hero extends Mover {
             }
             hitTimer++;
         }
+    }
+
+    private boolean ground()
+    {
+        Actor ground = getOneObjectAtOffset(0,getImage().getHeight()/2,Tile.class);
+        return ground != null;
     }
 
     public void TerugTP()
@@ -155,7 +162,7 @@ public class Hero extends Mover {
     }
 
     public void handleInput() {
-        if(Greenfoot.isKeyDown("p")){
+        /*if(Greenfoot.isKeyDown("p")){
             MyWorld world = new MyWorld();            
             Greenfoot.setWorld(world);
 
@@ -164,9 +171,10 @@ public class Hero extends Mover {
             Map2 world = new Map2();            
             Greenfoot.setWorld(world);
 
-        }
-        if (Greenfoot.isKeyDown("w")) {
-            velocityY = -12;
+        }*/
+        if (Greenfoot.isKeyDown("w") && ground() == true) {
+            velocityY = -18;
+            
         }
 
         if (Greenfoot.isKeyDown("a")) {
